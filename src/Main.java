@@ -1,21 +1,19 @@
+import java.util.Arrays;
+
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws java.lang.Exception {
 		int a[] = { 1, 2, 3, 3, 2, 1 };
-		int size = a.length;
-		int c = 0;
-		System.out.println("Size is: " + size);
-		for (int i = 0; i < a.length; i++) {
-			System.out.println("a[" + i + "] " + a[i]);
-
-		}
-		for (int i = 0; i < size / 2; i++) {
-			if (a[i] == a[size - i - 1]) { 																						// елементи
-				c = 1;
-			} else {
-				c = 2;
+		System.out.println(Arrays.toString(a));
+		System.out.println("Size is: " + a.length);
+		boolean symmetric = true;
+				
+		for (int i = 0; i < a.length / 2; i++) {
+			if (a[i] != a[a.length - i - 1]) { 																						// елементи
+				symmetric =false;
+				break;
 			}
-		}
-		System.out.println(c);
+		}		
+				System.out.println("Symmetric: " + symmetric);
 	}
 }
